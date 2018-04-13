@@ -8,6 +8,7 @@ name = "pypi"
 scrapy = "*"
 elasticsearch-dsl = "*"
 django = "*"
+"pypiwin32" = "*"
 
 [dev-packages]
 
