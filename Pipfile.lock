@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "c1a6a9246cd612ab6fa538d49f310c0d9c968c693fcef0435d03e23e58929014"
+            "sha256": "ec50fab178d833a39d397fdbeeb76b03322930f062855e519f2ca2dcf606c187"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -119,18 +119,19 @@
         },
         "elasticsearch": {
             "hashes": [
-                "sha256:503c498234dd572896e563386181d7cb966ab3db68b0b132a26c5dabfd5dde24",
-                "sha256:b106fa3e01750376a42f8a9882bd84d630fda58c7aba38b4fec797d11c0bd0a2"
+                "sha256:45d9f8fbe0878a1b7493afeb20f4f6677a43982776ed1a77d9373e9c5b9de966",
+                "sha256:db1a1000308db56f1475e059d28238238fafc20aab8cbf0ec0c3011f1caecd65"
             ],
-            "version": "==6.2.0"
+            "index": "pypi",
+            "version": "==5.2.0"
         },
         "elasticsearch-dsl": {
             "hashes": [
-                "sha256:5114a38a88e93a4663782eae07a1e8084ba333c49887335c83de8b8043bc72b2",
-                "sha256:d6d974cd2289543a3350690494a43fe9996485b8dc6f1d8758cb56bee01244bd"
+                "sha256:396393f7102a49605a91261d16218b5dd66b991a4a57cea982649cb52e6f25ac",
+                "sha256:5d3800d75240e99bbb0b5b16041e88a65cc8f7ddb34b6041d515a2d76df4352b"
             ],
             "index": "pypi",
-            "version": "==6.1.0"
+            "version": "==5.1.0"
         },
         "hyperlink": {
             "hashes": [
@@ -152,12 +153,6 @@
                 "sha256:7b751696aaf36eebfab537e458929e194460051ccad279c72b755a167eebd4b3"
             ],
             "version": "==17.5.0"
-        },
-        "ipaddress": {
-            "hashes": [
-                "sha256:200d8686011d470b5e4de207d803445deee427455cd0cb7c982b68cf82524f81"
-            ],
-            "version": "==1.0.19"
         },
         "lxml": {
             "hashes": [
@@ -252,10 +247,10 @@
         },
         "pytz": {
             "hashes": [
-                "sha256:07edfc3d4d2705a20a6e99d97f0c4b61c800b8232dc1c04d87e8554f130148dd",
-                "sha256:410bcd1d6409026fbaa65d9ed33bf6dd8b1e94a499e32168acfc7b332e4095c0"
+                "sha256:65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555",
+                "sha256:c06425302f2cf668f1bba7a0a03f3c1d34d4ebeef2c72003da308b3947c7f749"
             ],
-            "version": "==2018.3"
+            "version": "==2018.4"
         },
         "pywin32": {
             "hashes": [

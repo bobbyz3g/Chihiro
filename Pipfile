@@ -6,9 +6,10 @@ name = "pypi"
 [packages]
 "ce3d066" = {path = "E:/downloads/Twisted-17.9.0-cp36-cp36m-win_amd64.whl"}
 scrapy = "*"
-elasticsearch-dsl = "*"
+elasticsearch-dsl = "==5.1.0"
 django = "*"
 "pypiwin32" = "*"
+elasticsearch = "==5.2.0"
 
 [dev-packages]
 
