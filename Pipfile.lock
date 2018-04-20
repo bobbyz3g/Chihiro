@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ec50fab178d833a39d397fdbeeb76b03322930f062855e519f2ca2dcf606c187"
+            "sha256": "f965862dcaf20a159ad93bd6d2f25ef1ea565ae95012363e2f20cfcad15aba11"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -36,9 +36,6 @@
                 "sha256:3c1fd04ecf08ac87b4dd3feae409542e9bf7827257097b2b6ed5692f69d6f6a8"
             ],
             "version": "==0.6.0"
-        },
-        "ce3d066": {
-            "path": "E:/downloads/Twisted-17.9.0-cp36-cp36m-win_amd64.whl"
         },
         "cffi": {
             "hashes": [

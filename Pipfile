@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-"ce3d066" = {path = "E:/downloads/Twisted-17.9.0-cp36-cp36m-win_amd64.whl"}
 scrapy = "*"
 elasticsearch-dsl = "==5.1.0"
 django = "*"
