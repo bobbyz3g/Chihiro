@@ -2,18 +2,19 @@ import json
 from django.shortcuts import render
 from django.views.generic.base import View
 from .models import ArticleType
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpRequest
 from elasticsearch import Elasticsearch
 from datetime import datetime
+from typing import List
 
 client = Elasticsearch(hosts=["127.0.0.1"])
 
 
 # Create your views here.
 class SearchSuggest(View):
-    def get(self, request):
+    def get(self, request: HttpRequest) -> HttpResponse:
         key_words = request.GET.get('s', '')
-        re_datas = []
+        re_datas: List[str] = []
         if key_words:
             s = ArticleType.search()
             s = s.suggest('my_suggest', key_words, completion={
@@ -30,7 +31,7 @@ class SearchSuggest(View):
 
 
 class SearchView(View):
-    def get(self, request):
+    def get(self, request: HttpRequest) -> render:
         key_words = request.GET.get('q', '')
         page = request.GET.get('p', '')
         try:
@@ -38,7 +39,7 @@ class SearchView(View):
         except:
             page = 1
 
-        start_time = datetime.now()
+        start_time: datetime = datetime.now()
         response = client.search(
             index="chihiro",
             body={
@@ -60,8 +61,8 @@ class SearchView(View):
                 }
             }
         )
-        end_time = datetime.now()
-        last_seconds = (end_time - start_time).total_seconds()
+        end_time: datetime = datetime.now()
+        last_seconds: float = (end_time - start_time).total_seconds()
         total_nums = response["hits"]["total"]
         hit_list = []
         for hit in response["hits"]["hits"]:

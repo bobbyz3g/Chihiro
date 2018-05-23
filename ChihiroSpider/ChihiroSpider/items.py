@@ -11,6 +11,7 @@ from scrapy.loader.processors import TakeFirst, MapCompose
 from w3lib.html import remove_tags
 from .models.es_types import ArticleType
 from elasticsearch_dsl.connections import connections
+from typing import Any, Tuple, List, Dict
 
 
 class ChihirospiderItem(scrapy.Item):
@@ -26,7 +27,8 @@ def _remove_html_tags(value):
 _es = connections.create_connection(ArticleType._doc_type.using)
 
 
-def _gen_suggests(index, info_tuple):
+def _gen_suggests(index: Any, info_tuple: Tuple[str, int])-> List[Dict[str, List]]:
+
     # 根据字符串生成搜索建议数组
     used_words = set()
     suggests = []
@@ -53,7 +55,7 @@ class JianshuItem(scrapy.Item):
         input_processor=MapCompose(_remove_html_tags)
     )
 
-    def save(self):
+    def save(self)-> None:
         article = ArticleType()
         article.title = self['title']
         article.url = self['url']

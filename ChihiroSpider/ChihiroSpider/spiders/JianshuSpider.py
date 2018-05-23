@@ -4,6 +4,7 @@ from scrapy.http import Request
 from urllib import parse
 from ..items import JianshuItem, JianshuItemLoader
 import re
+from typing import Generator, Any
 
 
 class JianshuSpider(scrapy.Spider):
@@ -18,7 +19,7 @@ class JianshuSpider(scrapy.Spider):
         "JOBDIR": "spider_info/jianshu",
     }
 
-    def parse(self, response):
+    def parse(self, response)-> Generator[Request]:
         top_tags = response.xpath("//div[@class='main-top']/div[@class='info']/text()").extract()[0]
         total_nums = int(re.findall(r'\d+', top_tags)[0])
         article_urls = response.xpath("//ul[@class='note-list']/li/a/@href").extract()
@@ -30,7 +31,7 @@ class JianshuSpider(scrapy.Spider):
             next_page_url = self.start_urls[0] + "&page={0}" .format(self.page_num)
             yield Request(url=next_page_url, callback=self.parse)
 
-    def parse_detail(self, response):
+    def parse_detail(self, response) -> Generator[scrapy.Item, Any, None]:
         item_loader = JianshuItemLoader(item=JianshuItem(), response=response)
         item_loader.add_value("url", response.url)
         item_loader.add_xpath("title", "//div[@class='article']/h1/text()")
