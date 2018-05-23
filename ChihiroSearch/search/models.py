@@ -1,13 +1,13 @@
-from django.db import models
 from elasticsearch_dsl import DocType, Text, Completion, Keyword
 from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl.analysis import CustomAnalyzer as _CustomAnalyzer
+from typing import Dict
 
 connections.create_connection(hosts=['localhost'])
 
 
 class CustomAnalyzer(_CustomAnalyzer):
-    def get_analysis_definition(self):
+    def get_analysis_definition(self) -> Dict[str, Dict]:
         return {}
 
 
