@@ -8,6 +8,7 @@ scrapy = "*"
 elasticsearch-dsl = "==5.1.0"
 django = "*"
 elasticsearch = "==5.2.0"
+scrapy-redis = "*"
 
 [dev-packages]
 

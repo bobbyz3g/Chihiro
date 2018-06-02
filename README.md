@@ -24,6 +24,17 @@ $ pipenv install
 ### 2. 安装**Elasticsearch**
 
 1. 本项目使用[elasticsearch](https://github.com/elastic/elasticsearch)对数据储存索引，因此须在运行前安装**elasticsearch**并运行。推荐使用[elasticsearch-rtf](https://github.com/medcl/elasticsearch-rtf)（**注意：项目开发时使用的是es5.1.1，因此相应的python驱动也是对应的此版本，使用其他版本的请自行安装对应版本的驱动，以免产生不必要的麻烦。**）
+2. 索引的初始化可以调用ChihiroSpider或ChihiroSearch下的model类的初始化方法进行初始化。
 
-2. 索引的初始化可以调用ChihiroSpider或ChihiroSearch下的model类的初始化方法进行初始化。​
 
+### 3. 安装Redis
+
+1. 项目采取分布式爬取，使用Redis来对URL调度，去重，因此需安装好Redis。
+
+2. 在爬取时前使用如下命令
+
+   ~~~
+   redis-cli lpush myspider:start_urls https//urls
+   ~~~
+
+   ​

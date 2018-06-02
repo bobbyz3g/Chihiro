@@ -5,9 +5,10 @@ from urllib import parse
 from ..items import JianshuItem, JianshuItemLoader
 import re
 from typing import Generator, Any
+from scrapy_redis.spiders import RedisSpider
 
 
-class JianshuSpider(scrapy.Spider):
+class JianshuSpider(RedisSpider):
     name = 'JianshuSpider'
     allowed_domains = ['www.jianshu.com']
     start_urls = ['https://www.jianshu.com/c/V2CqjW?order_by=added_at']
@@ -19,7 +20,7 @@ class JianshuSpider(scrapy.Spider):
         "JOBDIR": "spider_info/jianshu",
     }
 
-    def parse(self, response)-> Generator[Request]:
+    def parse(self, response) ->Generator[Request, Any, None]:
         top_tags = response.xpath("//div[@class='main-top']/div[@class='info']/text()").extract()[0]
         total_nums = int(re.findall(r'\d+', top_tags)[0])
         article_urls = response.xpath("//ul[@class='note-list']/li/a/@href").extract()
