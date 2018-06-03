@@ -15,8 +15,6 @@ from typing import Any, Tuple, List, Dict
 
 
 class ChihirospiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
     pass
 
 
@@ -54,12 +52,14 @@ class JianshuItem(scrapy.Item):
     content = scrapy.Field(
         input_processor=MapCompose(_remove_html_tags)
     )
+    author = scrapy.Field()
 
     def save(self)-> None:
         article = ArticleType()
         article.title = self['title']
         article.url = self['url']
         article.content = self['content']
+        article.author = self['author']
 
         article.suggest = _gen_suggests(ArticleType._doc_type.index,
                                         ((article.title, 10), (article.content, 7)))

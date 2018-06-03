@@ -19,6 +19,7 @@ class ArticleType(DocType):
     title = Text(analyzer='ik_max_word')
     url = Keyword()
     content = Text(analyzer='ik_max_word')
+    author = Text(analyzer='ik_max_word')
 
     class Meta:
         index = "chihiro"

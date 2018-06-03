@@ -37,6 +37,7 @@ class JianshuSpider(RedisSpider):
         item_loader.add_value("url", response.url)
         item_loader.add_xpath("title", "//div[@class='article']/h1/text()")
         item_loader.add_xpath('content', "//div[@class='show-content-free']")
+        item_loader.add_xpath('author', "//div[@class='info']/span/a/text()")
 
         jianshu_item = item_loader.load_item()
 
