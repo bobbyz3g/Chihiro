@@ -14,11 +14,16 @@ BOT_NAME = 'ChihiroSpider'
 SPIDER_MODULES = ['ChihiroSpider.spiders']
 NEWSPIDER_MODULE = 'ChihiroSpider.spiders'
 
+# Set for Scrapy-redis
 # Enables scheduling storing requests queue in redis.
 SCHEDULER = "scrapy_redis.scheduler.Scheduler"
 
 # Ensure all spiders share same duplicates filter through redis.
 DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+# Set Redis-url
+import os
+os.getenv('localhost')
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'ChihiroSpider (+http://www.yourdomain.com)'
