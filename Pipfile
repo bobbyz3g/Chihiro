@@ -5,9 +5,9 @@ name = "pypi"
 
 [packages]
 scrapy = "*"
-elasticsearch-dsl = "==5.1.0"
+elasticsearch-dsl = "*"
 django = "*"
-elasticsearch = "==5.2.0"
+elasticsearch = "*"
 scrapy-redis = "*"
 
 [dev-packages]
