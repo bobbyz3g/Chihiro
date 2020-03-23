@@ -1,4 +1,4 @@
-from elasticsearch_dsl import DocType, Text, Completion, Keyword
+from elasticsearch_dsl import Document, Text, Completion, Keyword
 from elasticsearch_dsl.connections import connections
 from elasticsearch_dsl.analysis import CustomAnalyzer as _CustomAnalyzer
 from typing import Dict
@@ -14,7 +14,7 @@ class CustomAnalyzer(_CustomAnalyzer):
 ik_analyzer = CustomAnalyzer("ik_max_word", filter=["lowercase"])
 
 
-class ArticleType(DocType):
+class ArticleType(Document):
     suggest = Completion(analyzer=ik_analyzer)
     title = Text(analyzer='ik_max_word')
     url = Keyword()

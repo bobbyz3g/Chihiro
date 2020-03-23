@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "chihirospider"
+version = "0.1.0"
+description = "Chihiro backend"
+license = "MIT"
+authors = ["Zhang liangliang <zhangliangliang1996@hotmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+scrapy ="^2.0.1"
+scrapy-redis = "^0.6.8"
+elasticsearch = "^7.6.0"
+elasticsearch-dsl = "^7.1.0"
+
+[tool.poetry.dev-dependencies]
+
+[[tool.poetry.source]]
+name = "ali"
+url = "https://mirrors.aliyun.com/pypi/simple"
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
