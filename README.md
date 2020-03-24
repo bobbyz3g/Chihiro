@@ -5,7 +5,7 @@
 
 ## Introduction
 
-Chihiro is a simple search engine demo. It show you how to build a search engine website by using Django, Flask and ElasticSearch.
+Chihiro is a simple search engine demo. It show you how to build a search engine website by using Scrapy, Django and ElasticSearch.
 
 Chihiro consists of ChihiroSearch and ChihiroSpider.
 

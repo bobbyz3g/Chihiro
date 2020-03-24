@@ -1,2 +1,4 @@
 .idea
 ChihiroSpider/spider_info/
+*.egg-info
+*.pyc
