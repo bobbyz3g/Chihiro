@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "chihirospider"
 version = "0.1.0"
-description = "Chihiro backend"
+description = "Chihiro spider"
 license = "MIT"
 authors = ["Zhang liangliang <zhangliangliang1996@hotmail.com>"]
 
