@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.6.0
@@ -8,7 +8,7 @@ services:
     command:
       - sh
       - -c
-      - "./bin/elasticsearch-plugin list | grep -q ik || ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.1/elasticsearch-analysis-ik-7.6.1.zip; /usr/local/bin/docker-entrypoint.sh"
+      - "echo 'y' | ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.6.0/elasticsearch-analysis-ik-7.6.0.zip ;/usr/local/bin/docker-entrypoint.sh"
     ports:
       - "9200:9200"
       - "9300:9300"
